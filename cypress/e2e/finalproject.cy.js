@@ -82,47 +82,47 @@ import GoogleLoginPage from '../support/pageobjectmodel/google';
 Cypress.on('uncaught:exception', () => false);
 
 
-// describe('District Sports Page Test', () => {
-//   it('Should search sports, click View More Results, and log only sports-related event titles', () => {
-//     SportsPage.visitHomePage();
-//     cy.wait(4000);
-//     SportsPage.searchSports();
-//     cy.wait(10000);
-//     SportsPage.viewmore();
-//     const sportsEvents = [];
-//     SportsPage.getAllEventTitles().each(($el) => {
-//       const text = $el.text().trim();
-//       if (text.toLowerCase().includes('pkl') || text.toLowerCase().includes('sports')) {
-//         cy.log('Filtered Sports Event:', text);
-//         sportsEvents.push(text);
-//         cy.writeFile('cypress/results/sports.json', sportsEvents);
-//       }
-//     })
-//   });
-// });
+describe('District Sports Page Test', () => {
+  it('Should search sports, click View More Results, and log only sports-related event titles', () => {
+    SportsPage.visitHomePage();
+    cy.wait(4000);
+    SportsPage.searchSports();
+    cy.wait(10000);
+    SportsPage.viewmore();
+    const sportsEvents = [];
+    SportsPage.getAllEventTitles().each(($el) => {
+      const text = $el.text().trim();
+      if (text.toLowerCase().includes('pkl') || text.toLowerCase().includes('sports')) {
+        cy.log('Filtered Sports Event:', text);
+        sportsEvents.push(text);
+        cy.writeFile('cypress/results/sports.json', sportsEvents);
+      }
+    })
+  });
+});
 
 
-// describe('District Movies Page Test', () => {
-//   it('Should filter movies by Tamil and extract movie names', () => {
-//     MoviesPage.visitHomePage();
-//     cy.wait(10000);
-//     MoviesPage.clickMoviesLink();
-//     cy.wait(5000);
-//     MoviesPage.filterByTamil();
-//     cy.wait(5000);
+describe('District Movies Page Test', () => {
+  it('Should filter movies by Tamil and extract movie names', () => {
+    MoviesPage.visitHomePage();
+    cy.wait(10000);
+    MoviesPage.clickMoviesLink();
+    cy.wait(5000);
+    MoviesPage.filterByTamil();
+    cy.wait(5000);
 
-//     const movies = [];
-//     MoviesPage.getMovieTitles().each(($el) => {
-//       const name = $el.text().trim();
-//       if (name) {
-//         movies.push(name);
-//       }
-//     }).then(() => {
-//       cy.log('Extracted Movies:', movies);
-//       cy.writeFile('cypress/results/movies.json', movies);
-//     });
-//   });
-// });
+    const movies = [];
+    MoviesPage.getMovieTitles().each(($el) => {
+      const name = $el.text().trim();
+      if (name) {
+        movies.push(name);
+      }
+    }).then(() => {
+      cy.log('Extracted Movies:', movies);
+      cy.writeFile('cypress/results/movies.json', movies);
+    });
+  });
+});
 
 
 describe('Google Login Test', () => {
