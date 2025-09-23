@@ -17,3 +17,4 @@ class MoviesPage {
 }
 
 export default new MoviesPage();
+ 

@@ -6,7 +6,7 @@ class SportsPage {
   searchSports() {
     cy.get('#master-header > .dds-px-3 > .dds-mt-3 > .dds-w-full > .dds-h-11 > .dds-inline-block')
       .type('sports{enter}');
-      cy.get('[aria-label="All"] > .dds-text-inverse').click();
+      // cy.get('[aria-label="All"] > .dds-text-inverse').click();
       cy.get('[aria-label="Events"] > .dds-text-inverse').click();
   }
 
@@ -26,6 +26,6 @@ class SportsPage {
       return text.includes('vs') || text.includes('sports');
     });
   }
-}
+} 
 
 export default new SportsPage();
